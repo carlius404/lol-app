@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import ChampionList from "./ChampionList";
+import FactorBuilder from "./FactorBuilder";
+import TeamPicks from "./TeamPicks";
+import React, { createContext, useState } from 'react'
 
+export const ClickedContext=createContext()
 function App() {
+  const [clickedChamp, setClickedChamp]=useState(null)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ClickedContext.Provider value={[clickedChamp, setClickedChamp]}>
+      <div className="flex flex-row bg-slate-900">
+        <FactorBuilder></FactorBuilder>
+        <div className="flex flex-row m-1 rounded-md bg-slate-800 h-min">
+          <TeamPicks></TeamPicks>
+          <ChampionList></ChampionList>
+          <TeamPicks></TeamPicks>
+        </div>
+        
+      </div>
+    </ClickedContext.Provider>
+    
   );
 }
 
