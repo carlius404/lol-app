@@ -1,15 +1,13 @@
-import React, { useContext, useRef } from 'react'
-import { ImportedFactorsContext } from './FactorBuilder'
+import React, {useRef } from 'react'
 import {IoCloseCircleOutline} from "react-icons/io5"
 import {MdOutlineHealthAndSafety} from "react-icons/md"
 import {GiPointySword,GiSonicShoes} from "react-icons/gi"
 import {BsDropletFill} from "react-icons/bs"
 
-function FactorsList() {
-    const [importedFactors,setImportedFactors]=useContext(ImportedFactorsContext)
+function FactorsList({values}) {
     const FilterStats=({type,borderColor})=>{
         return(
-            importedFactors.map(factor=>{
+            values.map(factor=>{
                 console.log(factor,type)
                 if(factor.includes(type)){
                     return(
@@ -23,7 +21,7 @@ function FactorsList() {
     }  
     
     return (
-    <div className='flex flex-col h-screen px-2 m-1 overflow-y-scroll rounded-md bg-slate-800 text-slate-200 gap-y-1'>
+    <div className='flex flex-col h-screen px-2 m-1 overflow-y-scroll text-slate-200 gap-y-1 max-w-[200px]'>
         <div className='mt-3'>
             <MdOutlineHealthAndSafety className='text-2xl'></MdOutlineHealthAndSafety>
             <FilterStats className type={"hp"} borderColor={"border-green-300"}></FilterStats>

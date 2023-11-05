@@ -1,16 +1,20 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import ReactDom from 'react-dom'
 import { ClickedContext } from './App'
 import ChampionStats from './ChampionStats'
-function ChampionCard({setOpenCard}) {
-    const [clickedChamp, setClickedChamp]=useContext(ClickedContext)
+import {BiDownArrow,BiRightArrow} from "react-icons/bi"
+import ChampionCustomStats from './ChampionCustomStats'
 
+function ChampionCard({setOpenCard}) {
+    const [basicStats,setBasicStats]=useState({})
+    const [clickedChamp, setClickedChamp]=useContext(ClickedContext)
+    const [showStandard, setShowStandard]=useState(true)
+    const [showCustom, setShowCustom]=useState(true)
     const STYLE={
         position:"fixed",
         top:"50%",
         left:"50%",
         transform:"translate(-50%,-50%)",
-        backgroundColor:"#FFF",
     }
     const OVERLAY_STYLE={
         position:"fixed",
@@ -21,17 +25,35 @@ function ChampionCard({setOpenCard}) {
         backgroundColor:"rgba(0,0,0,.7)",
     }
     return ReactDom.createPortal(
-    <div onClick={()=>{setOpenCard(false)}} style={OVERLAY_STYLE}>
-        <div style={STYLE}>
-            <div className='bg-black border-4 border-black'>
+    <div style={OVERLAY_STYLE}>
+        <div className="p-3 pb-12 rounded-xl bg-slate-900" style={STYLE}>
+            <div>
                 
                 <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${clickedChamp}_0.jpg`}></img>
                 <div className='absolute text-xl font-bold top-5 left-5 text-slate-200'>
                     {clickedChamp}
                 </div>
-                <div className="min-h-[320px] min-w-[315px] absolute top-[250px] left-0 bg-[#0000008a] px-4">
-                    <ChampionStats name={clickedChamp}></ChampionStats>
+                
+                
+                <div className="h-[350px] w-[310px] absolute top-[250px] left-3 bg-[#0000008a] px-4 overflow-y-scroll">
+                    <div onClick={()=>{setShowStandard(!showStandard)}} className='flex flex-row items-center justify-between font-bold border-b-2 text-slate-200 hover:text-indigo-500 hover:border-indigo-500'>
+                        <a>Standard</a>
+                        {showStandard && <BiRightArrow className="text-md"></BiRightArrow>}
+                        {!showStandard && <BiDownArrow className="text-md"></BiDownArrow>}
+                    </div>
+                    
+                        {showStandard && <ChampionStats setBasicStats={setBasicStats} name={clickedChamp}></ChampionStats>}
+                    
+
+                    <div onClick={()=>{setShowCustom(!showCustom)}} className='flex flex-row items-center justify-between font-bold border-b-2 text-slate-200 hover:text-indigo-500 hover:border-indigo-500'>
+                        <a>Custom</a>
+                        {showCustom && <BiRightArrow className="text-md"></BiRightArrow>}
+                        {!showCustom && <BiDownArrow className="text-md"></BiDownArrow>}
+                    </div>
+                    {showCustom && Object.keys(basicStats).length>3 && <ChampionCustomStats basicStats={basicStats} name={clickedChamp} ></ChampionCustomStats>}
+                    
                 </div>
+                
                 
             </div>
         </div>
