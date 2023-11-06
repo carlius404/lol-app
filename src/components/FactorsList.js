@@ -11,7 +11,7 @@ function FactorsList({values}) {
                 console.log(factor,type)
                 if(factor.includes(type)){
                     return(
-                    <div className={`flex flex-row items-center pl-3 my-1 text-sm border-2 rounded-xl w-fit ${borderColor}`}>
+                    <div className={`flex flex-row items-center pl-1 my-1 text-xs border-2 rounded-xl w-fit ${borderColor}`}>
                         <a>{factor}</a>
                         <IoCloseCircleOutline className='ml-2 text-2xl hover:text-red-600 text-slate-200'></IoCloseCircleOutline>
                     </div>)

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext, useRef } from 'react'
 import ChampProfile from './ChampProfile'
-import {ClickedContext} from './App'
+import {ClickedContext} from '../App'
 import ChampionCard from './ChampionCard'
 function ChampionList() {
     const [champions, setChampions]=useState([])
@@ -30,12 +30,12 @@ function ChampionList() {
     },[])
     
     return (
-        <div className="grid h-[460px] grid-cols-6 gap-4 overflow-y-scroll rounded-xl">
+        <div className="grid h-[380px] grid-cols-6 gap-4 overflow-y-scroll rounded-xl">
         {champions.map(name=>{
             return(
             <>
-                {clickedChamp!=name && <div onClick={(event)=>{changeChamp(event,name)}} className='rounded-full hover:shadow-md hover:shadow-slate-500 max-w-[80px]'><ChampProfile name={name}></ChampProfile></div>}
-                {clickedChamp==name && <div onClick={(event)=>{changeChamp(event,name)}} className='border-2 rounded-full hover:shadow-md hover:shadow-slate-500 border-slate-300 max-w-[80px]'><ChampProfile name={name}></ChampProfile></div>}
+                {clickedChamp!=name && <div onClick={(event)=>{changeChamp(event,name)}} className='rounded-full hover:shadow-md hover:shadow-slate-500 max-w-[60px]'><ChampProfile name={name}></ChampProfile></div>}
+                {clickedChamp==name && <div onClick={(event)=>{changeChamp(event,name)}} className='border-2 rounded-full hover:shadow-md hover:shadow-slate-500 border-slate-300 max-w-[60px]'><ChampProfile name={name}></ChampProfile></div>}
             </>
             )
         })}

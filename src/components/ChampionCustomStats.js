@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import {evaluate} from "mathjs"
-import { ImportedFactorsContext } from './App';
+import { ImportedFactorsContext } from '../App';
 
 function ChampionCustomStats(basicStats) {
     basicStats = Object.fromEntries(Object.entries(basicStats.basicStats).map(([key, value]) => [String(key), value]));

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import ReactDom from 'react-dom'
-import { ClickedContext } from './App'
+import { ClickedContext } from '../App'
 import ChampionStats from './ChampionStats'
 import {BiDownArrow,BiRightArrow} from "react-icons/bi"
 import ChampionCustomStats from './ChampionCustomStats'
