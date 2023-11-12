@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import ReactDom from 'react-dom'
 import {MentionsInput,Mention} from "react-mentions"
 import {IoCloseSharp} from "react-icons/io5"
-import { ImportedFactorsContext } from '../App'
+import { ImportedFactorsContext } from '../DashBoard'
+
 function NewFactor({setNewFactor}) {
     const [importedFactors,setImportedFactors]=useContext(ImportedFactorsContext)
     const [value,setValue]=useState("")

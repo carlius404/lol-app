@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react'
 import ChampProfile from './ChampProfile'
-import { ClickedContext } from '../App';
+import { ClickedContext } from '../DashBoard';
 
 function TeamPicks({team}) {
     const [picks, setPicks]=useState({top:null, jungle:null, mid:null, adc:null, support:null})

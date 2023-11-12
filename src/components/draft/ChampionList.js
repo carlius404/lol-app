@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext, useRef } from 'react'
 import ChampProfile from './ChampProfile'
-import {ClickedContext} from '../App'
-import ChampionCard from './ChampionCard'
+import ChampionCard from '../championCard/ChampionCard'
+import { ClickedContext } from '../DashBoard'
 function ChampionList() {
     const [champions, setChampions]=useState([])
     const [clickedChamp, setClickedChamp]=useContext(ClickedContext)
