@@ -34,15 +34,20 @@ function NewFactor({setNewFactor}) {
         var a={id:factor, display:factor}
         return a
     })
-    console.log(autoComplete)
     
-    const saveFactor=()=>{
+    const saveFactor=async ()=>{
         var factorName=value.split("=")[0].replace(" ","")
         if(value.includes(">") || value.includes("<")){
             setImportedFactors({...importedFactors,tags:{...importedFactors.stats,[factorName]:value}})
         }else{
             setImportedFactors({...importedFactors,stats:{...importedFactors.stats,[factorName]:value}})
         }
+        const options={
+            method:"POST",
+            headers: {'Content-Type': 'application/json',},
+            body:JSON.stringify({"name":factorName, "formula":value, "creator":"prova"})}
+        const res= await fetch("http://localhost:5000/api/factor",options)
+        console.log(res)
         
         
     }
