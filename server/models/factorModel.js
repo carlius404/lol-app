@@ -10,6 +10,11 @@ const factorSchema=new Schema({
         type:String,
         required:[true,"Please enter the factor formula"]
     },
+
+    tag:{
+        type:Boolean,
+        required:[true,"Please enter the tag value (boolean)"]
+    },
     public:{
         type: Boolean,
         required: true,

@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from 'react'
 import ReactDom from 'react-dom'
-import { AuthContext} from "./AuthProvider"
+import { AuthContext, AuthProvider } from '../contexts/AuthProvider'
 import { Link, useNavigate } from "react-router-dom"
 function SignUp(){
     const [loading, setLoading]=useState(false)

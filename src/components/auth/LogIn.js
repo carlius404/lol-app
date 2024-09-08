@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from 'react'
 import ReactDom from 'react-dom'
-import { AuthContext} from "./AuthProvider"
+import { AuthContext, AuthProvider } from '../contexts/AuthProvider'
 import { Link, useNavigate } from "react-router-dom"
 
 function LogIn(){
@@ -42,6 +42,7 @@ function LogIn(){
             setLoading(true)
             await login(emailRef.current.value, pwRef.current.value)
             navigate("/")
+            console.log("HOME")
           } catch(error) {
             setAllert({text:error.message.replace("Firebase: ","").split("(")[0],type:"bad"})
           }

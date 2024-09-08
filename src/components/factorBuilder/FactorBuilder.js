@@ -3,12 +3,11 @@ import FactorsList from './FactorsList'
 import {BiDownArrow,BiRightArrow} from "react-icons/bi"
 import {BsPlusSquare} from "react-icons/bs"
 import NewFactor from './NewFactor'
+import CustomList from './CustomList'
 
 function FactorBuilder() {
-  const [openWindow,setOpenWindow]=useState(false)
   const [showStandard, setShowStandard]=useState(true)
   const [showCustom, setShowCustom]=useState(true)
-  const [newFactor, setNewFactor]=useState(false)
   const basicStats=
   ["hp",
   "hpperlevel",
@@ -48,16 +47,14 @@ function FactorBuilder() {
           <div className='flex flex-row items-center justify-between font-bold border-b-2 text-slate-200'>
             <div className="flex flex-row items-center gap-3">
               <a>Custom</a>
-              <BsPlusSquare onClick={()=>{setNewFactor(true)}} className='text-xl font-extrabold hover:text-indigo-500'></BsPlusSquare>
             </div>
               {showCustom && <BiRightArrow className="text-md"></BiRightArrow>}
               {!showCustom && <BiDownArrow className="text-md"></BiDownArrow>}
           </div>
           
         </div>
+        {showCustom && <CustomList></CustomList>}
       </div>
-
-      {newFactor && <NewFactor setNewFactor={setNewFactor}></NewFactor>}
       </>
     
   )

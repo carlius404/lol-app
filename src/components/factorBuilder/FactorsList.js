@@ -8,10 +8,9 @@ function FactorsList({values}) {
     const FilterStats=({type,borderColor})=>{
         return(
             values.map(factor=>{
-                console.log(factor,type)
                 if(factor.includes(type)){
                     return(
-                    <div className={`flex flex-row items-center pl-1 my-1 text-xs border-2 rounded-xl w-fit ${borderColor}`}>
+                    <div className={`flex flex-row items-center pl-1 my-1 text-xs border-2 rounded-xl w-fit ${borderColor} justify-between`}>
                         <a>{factor}</a>
                         <IoCloseCircleOutline className='ml-2 text-2xl hover:text-red-600 text-slate-200'></IoCloseCircleOutline>
                     </div>)
@@ -21,7 +20,7 @@ function FactorsList({values}) {
     }  
     
     return (
-    <div className='flex flex-col h-screen px-2 m-1 overflow-y-scroll text-slate-200 gap-y-1 max-w-[200px]'>
+    <div className='flex flex-col px-2 m-1 overflow-y-scroll text-slate-200 gap-y-1 max-w-[200px] max-h-[400px]'>
         <div className='mt-3'>
             <MdOutlineHealthAndSafety className='text-2xl'></MdOutlineHealthAndSafety>
             <FilterStats className type={"hp"} borderColor={"border-green-300"}></FilterStats>

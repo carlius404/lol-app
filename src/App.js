@@ -1,10 +1,10 @@
 import React from 'react'
-import { AuthProvider } from "./components/auth/AuthProvider";
 import DashBoard from "./components/DashBoard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import LogIn from './components/auth/LogIn';
 import SignUp from './components/auth/SignUp';
 import ResetPassword from './components/auth/ResetPassword';
+import { AuthProvider } from './components/contexts/AuthProvider';
 
 function App() {
 
