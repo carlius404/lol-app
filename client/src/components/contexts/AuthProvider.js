@@ -12,7 +12,7 @@ export function AuthProvider({children}) {
         userCredential.user.sendEmailVerification();
 
         console.log("POST CREATE ACCOUNT")
-        const response = await fetch('http://localhost:5000/api/user', {
+        const response = await fetch('https://lol-app-server.vercel.app/api/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ export function AuthProvider({children}) {
         if(currentUser!=undefined && currentUser!=null)
             {
                 console.log("USER",currentUser)
-                fetch(`http://localhost:5000/api/user/${uid}`).then((res)=>res.json().then((res)=>{
+                fetch(`https://lol-app-server.vercel.app/api/user/${uid}`).then((res)=>res.json().then((res)=>{
                     console.log("REEES USER DATA",res)
                 setUserData(res)
             }))

@@ -5,7 +5,7 @@ function CustomList() {
   const {userData,refresh,currentUser}=useContext(AuthContext)
   console.log("userData",userData)
   const deleteFactor=(id)=>{
-    fetch(`http://localhost:5000/api/user/${currentUser.uid}/factor/${id}`,{method:"DELETE"}).then(()=>{refresh(currentUser.uid)})
+    fetch(`https://lol-app-server.vercel.app/api/user/${currentUser.uid}/factor/${id}`,{method:"DELETE"}).then(()=>{refresh(currentUser.uid)})
   }
   return(
     <div className="flex flex-col px-2 m-1 overflow-y-scroll text-slate-200 gap-y-1 max-w-[200px] max-h-[400px]">

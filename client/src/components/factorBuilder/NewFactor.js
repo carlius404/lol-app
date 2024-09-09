@@ -44,11 +44,11 @@ function NewFactor() {
             headers: {'Content-Type': 'application/json'},
             body:JSON.stringify({"name":factorName, "formula":formula, "creator":"prova", "tag":tag})}
         
-        fetch("http://localhost:5000/api/factor",newFactorOpts).then((res)=>res.json().then((factorId)=>{
+        fetch("https://lol-app-server.vercel.app/api/factor",newFactorOpts).then((res)=>res.json().then((factorId)=>{
             console.log(res)
             const pushFactorOpts={
                 method:"PUT"}
-            fetch(`http://localhost:5000/api/user/${currentUser.uid}/factor/${factorId}`,pushFactorOpts).then(()=>{refresh(currentUser.uid)})
+            fetch(`https://lol-app-server.vercel.app/api/user/${currentUser.uid}/factor/${factorId}`,pushFactorOpts).then(()=>{refresh(currentUser.uid)})
         }))
 
         
