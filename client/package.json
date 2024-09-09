@@ -2,7 +2,7 @@
   "name": "lol-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://lol-app-server.vercel.app/",
+  "proxy": "https://smart-shopping-server-c8r1p1x09-carlius404s-projects.vercel.app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^13.4.0",

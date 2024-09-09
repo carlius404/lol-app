@@ -4,10 +4,15 @@ const Factor = require('./models/factorModel')
 const User = require('./models/userModel')
 const cors=require("cors")
 const app=express()
+
+// CORS Middleware
 app.use(cors({
-    origin:"*"
-}))
+    origin: "*",
+    methods: "GET,POST,PUT,DELETE,OPTIONS",
+    allowedHeaders: "Content-Type, Authorization"
+}));
 app.use(express.json())
+app.options("*", cors()); 
 
 app.get("/",(req,res)=>{res.status(200).json({"mes":1})})
 
