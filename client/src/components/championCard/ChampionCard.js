@@ -5,7 +5,7 @@ import {BiDownArrow,BiRightArrow} from "react-icons/bi"
 import ChampionCustomStats from './ChampionCustomStats'
 import { ClickedContext } from '../DashBoard'
 
-function ChampionCard() {
+function ChampionCard({setOpenCard}) {
     const [basicStats,setBasicStats]=useState({})
     const [clickedChamp, setClickedChamp]=useContext(ClickedContext)
     const [showStandard, setShowStandard]=useState(true)
@@ -28,14 +28,18 @@ function ChampionCard() {
     <div style={OVERLAY_STYLE}>
         <div className="p-3 pb-12 rounded-xl bg-slate-900" style={STYLE}>
             <div>
-                
-                <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${clickedChamp}_0.jpg`}></img>
+            <div className='flex flex-row items-center justify-end pb-3'>
+                    <button onClick={()=>{setOpenCard(false)}} className='bg-red-500 text-white font-bold py-2 px-2 rounded cursor-pointer hover:bg-red-600'>
+                        Close
+                    </button>
+                </div>
+                <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${clickedChamp}_0.jpg`}></img>
                 <div className='absolute text-xl font-bold top-5 left-5 text-slate-200'>
                     {clickedChamp}
                 </div>
                 
                 
-                <div className="h-[350px] w-[310px] absolute top-[250px] left-3 bg-[#0000008a] px-4 overflow-y-scroll">
+                <div className="h-[350px] w-[310px] absolute top-[250px] left-3 bg-[#0000008a] px-4">
                     <div onClick={()=>{setShowStandard(!showStandard)}} className='flex flex-row items-center justify-between font-bold border-b-2 text-slate-200 hover:text-indigo-500 hover:border-indigo-500'>
                         <a>Standard</a>
                         {showStandard && <BiRightArrow className="text-md"></BiRightArrow>}

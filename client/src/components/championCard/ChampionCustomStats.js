@@ -9,7 +9,7 @@ function ChampionCustomStats({name}) {
     const {userData}=useContext(AuthContext)
     var stats=basicData[name].stats
     stats = Object.fromEntries(Object.entries(stats).map(([key, value]) => [String(key), value]));
-    const customFactors=userData.factors
+    const customFactors=userData!=undefined?userData.factors:[]
     console.log(customFactors)
     const evaluateFact=(formula)=>{
         return Math.round(evaluate(formula,stats)*100)/100

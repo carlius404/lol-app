@@ -30,7 +30,7 @@ function ChampionList() {
     },[])
     
     return (
-        <div className="grid h-[380px] grid-cols-6 gap-4 overflow-y-scroll rounded-xl">
+        <div className="grid h-[380px] grid-cols-6 gap-4 overflow-y-scroll rounded-xl no-scrollbar">
         {champions.map(name=>{
             return(
             <>

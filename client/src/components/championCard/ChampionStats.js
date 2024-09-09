@@ -38,7 +38,7 @@ function ChampionStats({setBasicStats,name}) {
     }  
     
     return (  
-    <div className="flex flex-col">
+    <div className="flex flex-col overflow-y-scroll max-h-[170px] no-scrollbar">
         <div className="overflow-x-auto border-slate-200 text-slate-200 no-scrollbar">{tags.map(tag=>{return(<a className='px-2 mr-2 text-xs border-2 border-slate-200 rounded-xl'>{tag}</a>)})}</div>
         <div className="grid grid-cols-2">
             <div className='flex-col pt-2 text-sm text-slate-200'>

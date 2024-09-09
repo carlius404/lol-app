@@ -20,7 +20,7 @@ function FactorsList({values}) {
     }  
     
     return (
-    <div className='flex flex-col px-2 m-1 overflow-y-scroll text-slate-200 gap-y-1 max-w-[200px] max-h-[400px]'>
+    <div className='flex flex-col px-2 m-1 overflow-y-scroll text-slate-200 gap-y-1 max-w-[200px] max-h-[400px] no-scrollbar'>
         <div className='mt-3'>
             <MdOutlineHealthAndSafety className='text-2xl'></MdOutlineHealthAndSafety>
             <FilterStats className type={"hp"} borderColor={"border-green-300"}></FilterStats>

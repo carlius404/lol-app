@@ -8,7 +8,7 @@ function CustomList() {
     fetch(`https://lol-app-server.vercel.app/api/user/${currentUser.uid}/factor/${id}`,{method:"DELETE"}).then(()=>{refresh(currentUser.uid)})
   }
   return(
-    <div className="flex flex-col px-2 m-1 overflow-y-scroll text-slate-200 gap-y-1 max-w-[200px] max-h-[400px]">
+    <div className="flex flex-col px-2 m-1 overflow-y-scroll text-slate-200 gap-y-1 max-w-[200px] max-h-[400px] no-scrollbar">
       {userData && userData!=undefined?userData.factors.map((factor)=>{
         return(
           <div className={"flex flex-row items-center pl-1 my-1 text-xs border-2 rounded-xl border-indigo-400 w-fit justify-between"}>
