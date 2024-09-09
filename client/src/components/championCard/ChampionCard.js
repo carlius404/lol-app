@@ -33,7 +33,7 @@ function ChampionCard({setOpenCard}) {
                         Close
                     </button>
                 </div>
-                <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${clickedChamp}_0.jpg`}></img>
+                <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${clickedChamp}_0.jpg`}></img>
                 <div className='absolute text-xl font-bold top-5 left-5 text-slate-200'>
                     {clickedChamp}
                 </div>
