@@ -8,7 +8,7 @@ function ChampionStats({setBasicStats,name}) {
     const [tags,setTags]=useState([])
     const [importedFactors,setImportedFactors]=useState({})
     useEffect(()=>{
-    fetch(`http://ddragon.leagueoflegends.com/cdn/13.21.1/data/en_US/champion/${name}.json`).then(res=>res.json().then(res=>{
+    fetch(`https://ddragon.leagueoflegends.com/cdn/13.21.1/data/en_US/champion/${name}.json`).then(res=>res.json().then(res=>{
         setStats(res.data[name].stats)
         setBasicStats(res.data[name].stats)
         setTags(res.data[name].tags)

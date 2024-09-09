@@ -29,7 +29,7 @@ function ChampionCard() {
         <div className="p-3 pb-12 rounded-xl bg-slate-900" style={STYLE}>
             <div>
                 
-                <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${clickedChamp}_0.jpg`}></img>
+                <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${clickedChamp}_0.jpg`}></img>
                 <div className='absolute text-xl font-bold top-5 left-5 text-slate-200'>
                     {clickedChamp}
                 </div>

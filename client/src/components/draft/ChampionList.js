@@ -24,7 +24,7 @@ function ChampionList() {
       }
       
     useEffect(()=>{
-        fetch("http://ddragon.leagueoflegends.com/cdn/13.21.1/data/en_US/champion.json").then(res=>res.json().then(res=>{
+        fetch("https://ddragon.leagueoflegends.com/cdn/13.21.1/data/en_US/champion.json").then(res=>res.json().then(res=>{
             setChampions(Object.keys(res.data))
         }))
     },[])
